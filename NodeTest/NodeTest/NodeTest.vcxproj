@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{9c8fdcc3-9327-4da9-83a0-5c8465e7303a}</ProjectGuid>
-    <RootNamespace>Html2Xml</RootNamespace>
+    <ProjectGuid>{6a32dc25-f107-4b01-9112-9322b0896ba9}</ProjectGuid>
+    <RootNamespace>NodeTest</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -139,7 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Html2Xml.cpp" />
+    <ClCompile Include="NodeTest.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
