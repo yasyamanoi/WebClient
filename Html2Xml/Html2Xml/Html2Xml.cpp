@@ -36,7 +36,7 @@ string getStartTagName(const string& tag) {
 	string ret = "";
 	for (size_t i = 1; i < tag.size(); i++) {
 		if (in) {
-			if (!isalpha(tag[i])) {
+			if (!isalnum(tag[i])) {
 				return ret;
 			}
 			else {
@@ -49,7 +49,7 @@ string getStartTagName(const string& tag) {
 				//空白を返す
 				return string();
 			}
-			if (isalpha(tag[i])) {
+			if (isalnum(tag[i])) {
 				ret = tag[i];
 				in = true;
 			}
@@ -63,7 +63,7 @@ string getEndTagName(const string& tag) {
 	string ret = "";
 	for (size_t i = 2; i < tag.size(); i++) {
 		if (in) {
-			if (!isalpha(tag[i])) {
+			if (!isalnum(tag[i])) {
 				return ret;
 			}
 			else {
@@ -71,7 +71,7 @@ string getEndTagName(const string& tag) {
 			}
 		}
 		else {
-			if (isalpha(tag[i])) {
+			if (isalnum(tag[i])) {
 				ret = tag[i];
 				in = true;
 			}
@@ -147,6 +147,9 @@ struct KeyValue {
 
 void CreateAttlibutes(Node& newNode, const vector<string>& tagStrings) {
 	for (size_t i = 1; i < tagStrings.size(); i++) {
+		if (tagStrings[i] == "/") {
+			continue;
+		}
 		KeyValue keyval;
 		keyval.Create(tagStrings[i]);
 		if (keyval.m_value != "") {
@@ -460,14 +463,13 @@ void GetHttpPage(LPCTSTR pszServerName, LPCTSTR pszFileName,int port,string& ret
 		pFile = pServer->OpenRequest(CHttpConnection::HTTP_VERB_GET, pszFileName);
 		pFile->SendRequest();
 		pFile->QueryInfoStatusCode(dwRet);
-
-
-
 		if (dwRet == HTTP_STATUS_OK)
 		{
-			CHAR szBuff[1024];
-			while (pFile->Read(szBuff, 1024) > 0)
+			CHAR szBuff[1030];
+			UINT readSize;
+			while ((readSize = pFile->Read(szBuff, 1024)) > 0)
 			{
+				szBuff[readSize] = '\0';
 				ret += szBuff;
 			}
 		}
@@ -506,7 +508,7 @@ void SplitURL2ServerFile(const string& base,string& server,string& file) {
 
 int main(int argc,char* argv[])
 {
-	if (argc == 3 || argc == 4) {
+	if (argc == 3) {
 		string inHtml = argv[1];
 		cout << inHtml << endl;
 		string html;
@@ -520,6 +522,7 @@ int main(int argc,char* argv[])
 			}
 			CStringW serverW(server.c_str());
 			CStringW fileW(file.c_str());
+			//今のところportは80固定
 			int port = 80;
 			GetHttpPage(serverW, fileW, port, html);
 		}
@@ -542,7 +545,7 @@ int main(int argc,char* argv[])
 	}
 	else {
 		cout << "パラメータが足りません\n";
-		cout << "Html2Xml 読み込むHTML 書きだすXMLファイル [エンコード]" << endl;
+		cout << "Html2Xml 読み込むHTML 書きだすXMLファイル " << endl;
 		return 0;
 	}
 	return 0;
