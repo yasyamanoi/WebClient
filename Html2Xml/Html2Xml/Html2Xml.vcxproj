@@ -81,6 +81,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Html2Xml.cpp" />
+    <ClCompile Include="HtmlParser.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="HtmlParser.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
