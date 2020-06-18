@@ -8,9 +8,9 @@ C++によるコンソールアプリです。MFCを使用しています。
 Xml2Xml もとになるHTML 保存するXMLファイル  
 と入力してください。  
 例えば、ものになるHTMLが  
-「https\://hoge.huga.piyo/index.html」  
+「ｈｔｔｐｓ：／／hoge.huga.piyo/index.html」  
 で、保存するファイルが「index.xml」ならば  
-Html2Xml https\://hoge.huga.piyo/index.html index.xml  
+Html2Xml ｈｔｔｐｓ：／／hoge.huga.piyo/index.html index.xml  
 となります。  
 また、ローカルファイルをXMLにする場合は  
 Html2Xml index.html index.xml  
