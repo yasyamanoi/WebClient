@@ -2,7 +2,7 @@
 //
 
 #include "HtmlParser.h"
-
+/*
 void getHttpPage(LPCTSTR pszServerName, LPCTSTR pszFileName,int port,string& ret)
 {
 	CInternetSession session(_T("My Session"));
@@ -49,12 +49,14 @@ void getHttpPage(LPCTSTR pszServerName, LPCTSTR pszFileName,int port,string& ret
 	}
 	session.Close();
 }
+*/
 
 int main(int argc,char* argv[])
 {
 	if (argc == 3) {
 		string inHtml = argv[1];
 		cout << inHtml << endl;
+/*
 		string html;
 		regex pat("^http.*");
 		if (regex_match(inHtml, pat)) {
@@ -75,9 +77,16 @@ int main(int argc,char* argv[])
 				html += "\n";
 			}
 		}
-		HtmlParser parser;
-		parser.pars(html);
-		parser.output(argv[2]);
+*/
+		webclient::HtmlParser parser;
+		if (!parser.readHtml(inHtml)) {
+			cout << "HTMLの読み込みに失敗しました\n";
+		}
+		else {
+			if (!parser.outXml(argv[2])) {
+				cout << "XMLの保存に失敗しました\n";
+			}
+		}
 		return 0;
 	}
 	else {
