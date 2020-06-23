@@ -1,9 +1,12 @@
 ﻿// Html2Xml.cpp : このファイルには 'main' 関数が含まれています。プログラム実行の開始と終了がそこで行われます。
 //
 
+// Html2Xml.cpp : このファイルには 'main' 関数が含まれています。プログラム実行の開始と終了がそこで行われます。
+//
+
 #include "HtmlParser.h"
 
-int main(int argc,char* argv[])
+int main(int argc, char* argv[])
 {
 	if (argc == 3) {
 		string inHtml = argv[1];
@@ -26,4 +29,3 @@ int main(int argc,char* argv[])
 	}
 	return 0;
 }
-
