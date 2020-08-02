@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Html2Xml", "Html2Xml\Html2Xml.vcxproj", "{D34B2604-0FF5-499E-BBE2-11217A95B18C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ClientLib", "..\Libs\ClientLib\ClientLib.vcxitems", "{E0C7AA75-3495-41A2-B3FB-7B6490C211F9}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		..\Libs\ClientLib\ClientLib.vcxitems*{d34b2604-0ff5-499e-bbe2-11217a95b18c}*SharedItemsImports = 4
+		..\Libs\ClientLib\ClientLib.vcxitems*{e0c7aa75-3495-41a2-b3fb-7b6490c211f9}*SharedItemsImports = 9
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D34B2604-0FF5-499E-BBE2-11217A95B18C}.Debug|x64.ActiveCfg = Debug|x64
+		{D34B2604-0FF5-499E-BBE2-11217A95B18C}.Debug|x64.Build.0 = Debug|x64
+		{D34B2604-0FF5-499E-BBE2-11217A95B18C}.Release|x64.ActiveCfg = Release|x64
+		{D34B2604-0FF5-499E-BBE2-11217A95B18C}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2CB8C9FE-8912-4FC4-98FA-EA31B6A6C171}
+	EndGlobalSection
+EndGlobal
